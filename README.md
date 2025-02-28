@@ -1,6 +1,6 @@
 # Draw Heap
 
-This project draws a binary heap as a binary tree on a 2D grid and displays the result on a web page using a Flask GUI. The project is designed to be user-friendly, with automation workflows for continuous integration.
+This project draws a min-heap as a binary tree on a 2D grid and displays the result on a web page using a Flask GUI. The project is designed to be user-friendly, with automation workflows for continuous integration.
 
 ## Features
 
@@ -56,4 +56,3 @@ This project draws a binary heap as a binary tree on a 2D grid and displays the 
 5. **Exit:**
     Exit the program by: Press CTRL + C to quit
 
-    
