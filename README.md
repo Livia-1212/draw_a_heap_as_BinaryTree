@@ -34,8 +34,8 @@ This project draws a min-heap as a binary tree on a 2D grid and displays the res
 
 2. **Create a virtual environment:**
    ```bash
-    python3 -m venv env
-    source env/bin/activate
+    python3 -m venv venv
+    source venv/bin/activate
     pip install -r requirements.txt
    ```
 
