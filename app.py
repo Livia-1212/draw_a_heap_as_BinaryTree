@@ -1,14 +1,11 @@
 from flask import Flask, render_template_string
-from draw_heap import draw_heap
+from draw_heap import draw_heap, DEFAULT_HEAP
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # Example heap; modify as desired.
-    heap = [10, 15, 20, 17, 25, 30, 35, 40, 45, 50]
-    tree_str = draw_heap(heap)
-    # Simple HTML page with the output in a preformatted text block.
+    tree_str = draw_heap(DEFAULT_HEAP)
     html = f"""
     <!DOCTYPE html>
     <html>

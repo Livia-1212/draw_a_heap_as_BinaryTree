@@ -1,22 +1,25 @@
 import math
 
+# Default heap example used by both the CLI and the Flask app.
+DEFAULT_HEAP = [10, 20, 30, 35, 38, 40, 60]
+
 def draw_heap(heap, vertical_gap=2):
     n = len(heap)
     if n == 0:
         return "Heap is empty"
 
-    # 1. Compute the height of the heap:
+    # Compute the height of the heap:
     height = math.floor(math.log2(n)) + 1
 
     # Compute maximum width among node strings.
     max_width = max(len(str(x)) for x in heap)
     cell_width = max_width + 1
 
-    # 2. Determine total grid width.
+    # Determine total grid width.
     total_slots = 2**height - 1
     total_width = total_slots * cell_width
 
-    # 3. Create a 2D grid for spaces.
+    # Create a 2D grid for spaces.
     grid_height = height + (height - 1) * vertical_gap
     grid = [[' ' for _ in range(total_width)] for _ in range(grid_height)]
 
@@ -34,10 +37,9 @@ def draw_heap(heap, vertical_gap=2):
         for i in range(1, segments):
             row = row_start + i
             col = round(col_start + i * (col_end - col_start) / segments)
-            # Choose edge character based on the direction.
             grid[row][col] = '/' if col_end < col_start else '\\'
 
-    # 4. Place the node recursively.
+    # Place the node recursively.
     def place_node(index, level, left_bound, right_bound):
         if index > n or left_bound > right_bound:
             return
@@ -74,11 +76,8 @@ def draw_heap(heap, vertical_gap=2):
     place_node(1, 0, 0, total_width - 1)
     return "\n".join("".join(row) for row in grid)
 
-# If run directly, print the drawn heap.
 def main():
-    # Example heap; modify as needed.
-    heap = [10, 20, 30, 35, 38, 40, 60]
-    tree_str = draw_heap(heap)
+    tree_str = draw_heap(DEFAULT_HEAP)
     print(tree_str)
 
 if __name__ == '__main__':
