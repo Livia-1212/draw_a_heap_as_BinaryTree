@@ -2,7 +2,7 @@ import math
 import heapq
 import random
 
-DEFAULT_HEAP = [45, 72, 3, 89, 10, 61, 27, 38]
+DEFAULT_HEAP = [10, 20, 30, 35, 38, 40, 60]
 
 
 def generate_random_heap(min_len=3, max_len=15, value_range=(1, 100)):
@@ -86,10 +86,8 @@ def draw_heap(heap, vertical_gap=2):
     return "\n".join("".join(row) for row in grid)
 
 def main():
-    # This default list will be heapified into a min-heap
-    heap = [10, 20, 30, 35, 38, 40, 60]
-    print("Original list:", heap)
-    tree_str = draw_heap(heap)
+    print("Original list:", DEFAULT_HEAP)
+    tree_str = draw_heap(DEFAULT_HEAP)
     print(tree_str)
 
 if __name__ == '__main__':
